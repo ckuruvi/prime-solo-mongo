@@ -32,9 +32,7 @@ db.orders.find({$and:[{"lineItems.quantity":{$gt:5}},{"lineItems.quantity":{$lt:
 
 Update one of your line items to 42.99. HINT: Look at dot notation
 
-db.orders.update({_id:ObjectId("589a1ff8275906a40a97fbe3")},{$set:{"lineItems.unitPrice":42.99}})  ——did not work
+db.orders.update({_id:ObjectId("589a216f275906a40a97fbe4")},{$set:{"lineItems.0.unitPrice":42.99}})
 
 Remove one of your orders.
 db.orders.remove({_id : ObjectId("589a1ff8275906a40a97fbe3")})
-
-db.orders.remove({“lineItems.productName”:”pringles”})  —did not work
